@@ -1,25 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import MenuExampleTabularOnRight from './components/menu';
+import Landing from './components/Landing';
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import Nav from './components/Landing/Nav';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    
+    <BrowserRouter>
+    <Nav />
+      <Route  path="/" exact component={Landing} />
+      <Route path="/discover" component={MenuExampleTabularOnRight} />
+    </BrowserRouter>  
+    </>  
+    );
 }
 
 export default App;
